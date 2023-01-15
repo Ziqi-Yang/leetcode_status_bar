@@ -1,0 +1,35 @@
+#+title: Leetcode Status Bar
+
+A simple python script to show leetcode everyday problem and your AC number for easy, medium and hard problems on leetcode. Support both english site and chinese site. Currently, the output of the program only supports waybar formatting. If you use other bar and want to give it a try, simply modify the script to what you want, or even better, please consider making a pull request to enhance the script.
+** Run
+Download the =leetcode_status= file and make it executable(can be done with the command *chmod +x leetcode_status*), run:
+#+begin_src bash
+./leetcode_status --help # for complete help information
+
+./leetcode_status <username> # EN site
+./leetcode_status -z <username> # CN site
+
+./leetcode_status <username> -t # toggle everyday question comlete state
+#+end_src
+
+** Screenshot
+[[file:./screenshots/1.png][screenshot 1]]
+[[file:screenshots/2.png][screenshot 2]]
+
+** Sample Configurations for Specific Bar
+*** Waybar
+The icon font using in formating waybar is =fontawesome 6 free=, which can be found on your package responsitory or [[https://github.com/FortAwesome/Font-Awesome/releases][GitHub]].
+#+begin_src json
+"custom/leetcode": {
+    "format": "{}",
+    "interval": 300,  // 5 minutes
+    "exec": "~/.config/waybar/scripts/leetcode_status <your-username>", // FIXME
+    "on-click": "xdg-open https://leetcode.com/problemset/all/",
+    "on-click-right": "~/.config/waybar/scripts/leetcode_status <your-username> -t; pkill -SIGRTMIN+3 waybar", // FIXME
+    "signal": 3
+},
+#+end_src
+
+Please at least modify the strings in angle bracket to make it work.
+
+=Behavior=: left click to open leetcode problems page on your default browser, right click to mark the everyday problem completed/incompleted and update this module using a signal.
