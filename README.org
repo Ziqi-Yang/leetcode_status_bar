@@ -2,6 +2,13 @@
 
 A simple python script to show leetcode everyday problem and your AC number for easy, medium and hard problems on leetcode. Support both english site and chinese site. Currently, the output of the program only supports waybar formatting. If you use other bar and want to give it a try, simply modify the script to what you want, or even better, please consider making a pull request to enhance the script.
 
+** Screenshot
+#+CAPTION: screenshot 1
+[[./screenshots/1.png]]
+
+#+CAPTION: screenshot 2
+[[./screenshots/2.png]]
+
 ** Run
 Download the =leetcode_status= file and make it executable(can be done with the command *chmod +x leetcode_status*), run:
 #+begin_src bash
@@ -12,13 +19,6 @@ Download the =leetcode_status= file and make it executable(can be done with the 
 
 ./leetcode_status <username> -t # toggle everyday question comlete state
 #+end_src
-
-** Screenshot
-#+CAPTION: screenshot 1
-[[./screenshots/1.png]]
-
-#+CAPTION: screenshot 2
-[[./screenshots/2.png]]
 
 ** Sample Configurations for Specific Bar
 *** Waybar
